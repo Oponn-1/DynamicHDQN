@@ -101,9 +101,9 @@ def run(env_name='MountainCar-v0',
     env = make_environment(env_name)
     env_test = make_environment(env_name)
     # env_test = Monitor(env_test, directory='videos/', video_callable=lambda x: True, resume=True)
-    print 'Made environment!'
+    print ('Made environment!')
     agent = make_agent(agent_type, env)
-    print 'Made agent!'
+    print ('Made agent!')
 
     for it in range(num_iterations):
 
@@ -152,8 +152,8 @@ def run(env_name='MountainCar-v0',
             terminal = False
 
             while not terminal:
-    		if agent_type == 'dqn':
-    		    action = agent.best_action(state)
+                if agent_type == 'dqn':
+                    action = agent.best_action(state)
                 else:
                     action, info = agent.best_action(state)
                 if agent_type == 'h_dqn' and info is not None:

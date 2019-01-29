@@ -15,8 +15,11 @@ class DqnAgent(object):
     REPLAY_MEMORY_INIT_SIZE = 5000
     # Update the target network every TARGET_UPDATE timesteps.
     TARGET_UPDATE = 1000 #10000
+    # Learning Rate
+    LEARNING_RATE = 0.00025
 
-    def __init__(self, sess=None, learning_rate=0.00025, state_dims=[], num_actions=0,
+
+    def __init__(self, sess=None, learning_rate=LEARNING_RATE, state_dims=[], num_actions=0,
         epsilon_start=1.0, epsilon_end=0.1, epsilon_decay_steps=50000, replay_memory_init_size=None,
         target_update=None):
 
